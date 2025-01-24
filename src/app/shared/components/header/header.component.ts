@@ -1,4 +1,4 @@
-import { Component, OnInit, output } from '@angular/core';
+import { Component, OnInit, input, output } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 
@@ -10,8 +10,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  search = new FormControl('');
+  items = input<number>(0);
   filter = output<string>();
+  search = new FormControl('');
 
   ngOnInit() {
     this.search.valueChanges.pipe(

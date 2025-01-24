@@ -2,6 +2,11 @@
   <h1>MarketPlace</h1>
   <input class="search" [formControl]="search" placeholder="search" type="text" />
   <div class="controls">
-    <span class="material-icons-outlined icon">shopping_cart</span>
+    <div class="cart">
+      <span class="material-icons-outlined icon">shopping_cart</span>
+      @if (items() > 0) {
+      <small>{{ items() }}</small>
+      }
+    </div>
   </div>
 </div>

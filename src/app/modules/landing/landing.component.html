@@ -1,12 +1,18 @@
 <main>
   <header>
-    <app-header (filter)="setFilter($event)"></app-header>
+    <app-header
+      [items]="items()"
+      (filter)="setFilter($event)"
+    ></app-header>
   </header>
   <nav>
     <app-nav [categories]="categories()"></app-nav>
   </nav>
   <section>
-    <app-products [products]="products()" ></app-products>
+    <app-products
+      [products]="products()"
+      (setProduct)="addToCart($event)"
+    ></app-products>
   </section>
   <footer>
     <app-footer></app-footer>
