@@ -1,0 +1,6 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23ch, 1fr));
+  gap: 1rem;
+  padding-inline: 2rem;
+}

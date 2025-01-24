@@ -1,0 +1,21 @@
+.nav {
+  padding: 1rem;
+}
+
+ul {
+  max-width: 75rem;
+  margin-inline: auto;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+li {
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  background-color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--accent);
+}

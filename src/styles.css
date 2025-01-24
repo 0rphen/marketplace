@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'material-icons/iconfont/material-icons.css';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: var(--font);
+}
+
+:root {
+  --primary: #FF724C;
+  --secondary: #FDBF50;
+  --base: #F4F4F8;
+  --accent: #2A2C41;
+  --font: "Montserrat", serif;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+main {
+  display: grid;
+  min-height: 100dvh;
+  overflow: hidden;
+  grid-template-areas: var(--area, "header header" "nav nav" "content content" "footer footer");
+  grid-template-columns: var(--columns, minmax(30ch, 1fr) 5fr);
+  grid-template-rows: var(--rows, auto auto 1fr 6rem);
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+section {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.button-primary {
+  padding-block: 1rem;
+  border: none;
+  background-color: var(--primary);
+  color: var(--base);
+  cursor: pointer;
+  transition: all .5s;
+  &:hover {
+    background-color: oklch(from var(--primary) calc(l - .15) c h);
+  }
+  &:active {
+    background-color: oklch(from var(--primary) calc(l - .25) c h);
+  }
+  &:focus {
+    background-color: oklch(from var(--primary) calc(l - .20) c h);
+  }
+}
+
+.full {
+  width: 100%;
+}

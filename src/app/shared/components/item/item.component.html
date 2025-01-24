@@ -1,0 +1,10 @@
+<div class="item">
+  <img alt="" [src]="src()" />
+  <div class="text">
+    <div class="title">
+      <p>{{ title() }}</p>
+      <span>{{ price() | currency: 'USD' }}</span>
+    </div>
+  </div>
+  <button class="button-primary" (click)="addToCart()">Add to cart</button>
+</div>

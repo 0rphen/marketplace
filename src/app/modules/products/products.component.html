@@ -1,0 +1,12 @@
+<section class="items">
+  @for(product of products(); track product) {
+  <app-item
+    [id]="product.id"
+    [title]="product.title"
+    [src]="product.image"
+    [price]="product.price"
+    [description]="product.description"
+    (setItem)="addToCart($event, product.title)"
+  ></app-item>
+  }
+</section>
