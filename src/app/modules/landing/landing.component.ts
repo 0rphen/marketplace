@@ -32,7 +32,8 @@ export class LandingComponent implements OnInit {
 
   categories = this.productFacade.categories;
   products = this.productFacade.products;
-  items = this.cartFacade.size;
+  items = this.cartFacade.products;
+  itemSize = this.cartFacade.size;
 
   ngOnInit(): void {
     this.productFacade.initUi();

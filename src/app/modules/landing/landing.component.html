@@ -1,7 +1,7 @@
 <main>
   <header>
     <app-header
-      [items]="items()"
+      [items]="itemSize()"
       (filter)="setFilter($event)"
       (cart)="toggleCart()"
     ></app-header>
@@ -15,6 +15,7 @@
   <section>
     <app-products
       [products]="products()"
+      [items]="items()"
       (setProduct)="addToCart($event)"
     ></app-products>
   </section>
