@@ -9,13 +9,20 @@ ul {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 li {
   padding-inline: 1rem;
-  padding-block: 2rem;
+  padding-block: var(--p-b, 2rem);
   background-color: white;
   cursor: pointer;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+@media screen and (width < 600px) {
+  li {
+    --p-b: .75rem;
+  }
 }

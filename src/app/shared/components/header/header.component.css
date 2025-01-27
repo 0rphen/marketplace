@@ -35,3 +35,9 @@ small {
   cursor: pointer;
   position: relative;
 }
+
+@media screen and (width < 600px) {
+  .search {
+    display: none;
+  }
+}
