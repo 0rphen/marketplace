@@ -1,6 +1,7 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { ICartItem } from '../interfaces/cart-item.interface';
 import { ProductFacade } from './product.facade';
+import { json2csv } from 'json-2-csv';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class CartFacade {
         return {...product, amount };
       })
     })
+  }
+
+  dowloadCSV() {
+    return json2csv(this.products());
   }
 }
