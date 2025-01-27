@@ -2,7 +2,7 @@
   <h1>MarketPlace</h1>
   <input class="search" [formControl]="search" placeholder="search" type="text" />
   <div class="controls">
-    <div class="cart">
+    <div class="cart" (click)="toggleCart()">
       <span class="material-icons-outlined icon">shopping_cart</span>
       @if (items() > 0) {
       <small>{{ items() }}</small>

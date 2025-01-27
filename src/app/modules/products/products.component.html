@@ -8,5 +8,7 @@
     [description]="product.description"
     (setItem)="addToCart($event, product.title)"
   ></app-item>
+  } @empty {
+    <span>There are no Items.</span>
   }
 </section>

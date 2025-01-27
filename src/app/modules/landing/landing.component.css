@@ -17,3 +17,14 @@ dialog {
         display .5s allow-discrete;
   }
 }
+.cart {
+  grid-area: 2 / 2 / 4 / 3;
+  background-color: white;
+  padding: 1rem;
+  transition: all .5s;
+  transform: translateX(100%);
+}
+.open {
+  transform: translate(0);
+  box-shadow: 0 0 10px rgb(from black r g b /.2);
+}

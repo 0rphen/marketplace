@@ -1,10 +1,13 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, computed, inject, signal } from '@angular/core';
 import { ICartItem } from '../interfaces/cart-item.interface';
+import { ProductFacade } from './product.facade';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartFacade {
+  private _products = inject(ProductFacade).products;
+
   private _cart = signal<ICartItem[]>([]);
 
   get cart() {
@@ -26,7 +29,17 @@ export class CartFacade {
   }
 
   removeCartItem(id: number) {
-    const index = this._cart().findIndex((item) => item.id === id);
-    this._cart.update((items) => [...items.splice(index, 1)]);
+    this._cart.update((cart) => [...cart.filter((item) => item.id != id)]);
+  }
+
+  get products() {
+    return computed(() => {
+      const ids = this._cart().map((item) => item.id)
+      const products = this._products()?.filter((product) => ids.includes(product.id)) || [];
+      return products.map((product) => {
+        const amount = this._cart().find((cart) => cart.id == product.id)?.amount;
+        return {...product, amount };
+      })
+    })
   }
 }

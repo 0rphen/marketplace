@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -9,4 +9,9 @@ import { Component, input } from '@angular/core';
 })
 export class NavComponent {
   categories = input<string[] | undefined>();
+  selected = output<string>();
+
+  emitSelected(category: string) {
+    this.selected.emit(category)
+  }
 }

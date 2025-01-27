@@ -1,7 +1,9 @@
 <div class="nav">
   <ul>
     @for(category of categories(); track category) {
-    <li>{{category}}</li>
+    <li>
+      <span (click)="emitSelected(category)">{{category}}</span>
+    </li>
     }
   </ul>
 </div>

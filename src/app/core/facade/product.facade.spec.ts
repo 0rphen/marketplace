@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LandingFacade } from './landing.facade';
+import { ProductFacade } from './product.facade';
 
-describe('LandingFacade', () => {
-  let service: LandingFacade;
+describe('ProductFacade', () => {
+  let service: ProductFacade;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LandingFacade);
+    service = TestBed.inject(ProductFacade);
   });
 
   it('should be created', () => {

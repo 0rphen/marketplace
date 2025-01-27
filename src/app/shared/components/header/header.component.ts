@@ -12,6 +12,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 export class HeaderComponent implements OnInit {
   items = input<number>(0);
   filter = output<string>();
+  cart = output();
   search = new FormControl('');
 
   ngOnInit() {
@@ -21,5 +22,9 @@ export class HeaderComponent implements OnInit {
     ).subscribe((res) => {
       if (res) this.filter.emit(res);
     })
+  }
+
+  toggleCart() {
+    this.cart.emit();
   }
 }

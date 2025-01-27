@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<section class="cart">
+  <h2>My Cart</h2>
+  <ul>
+    @for (product of products(); track product) {
+      <li class="item">
+        <span class="title">{{ product.title }}</span>
+        <span class="units">x{{ product.amount }} units</span>
+        <span
+          (click)="deleteItem(product.id)"
+          class="material-icons-outlined icon delete"
+        >delete</span>
+      </li>
+    } @empty {
+      <li>There are no items.</li>
+    }
+    </ul>
+  <div class="total">
+    <span>Total:</span>
+    <span>{{ total() | currency: 'USD' }}</span>
+  </div>
+  <button class="button-primary">Comprar</button>
+</section>

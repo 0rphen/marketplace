@@ -3,10 +3,14 @@
     <app-header
       [items]="items()"
       (filter)="setFilter($event)"
+      (cart)="toggleCart()"
     ></app-header>
   </header>
   <nav>
-    <app-nav [categories]="categories()"></app-nav>
+    <app-nav
+      [categories]="categories()"
+      (selected)="selected($event)"
+    ></app-nav>
   </nav>
   <section>
     <app-products
@@ -17,4 +21,7 @@
   <footer>
     <app-footer></app-footer>
   </footer>
+  <div class="cart" [ngClass]="{'open': openCart() }">
+    <app-cart></app-cart>
+  </div>
 </main>

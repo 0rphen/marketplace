@@ -25,7 +25,7 @@ main {
   min-height: 100dvh;
   overflow: hidden;
   grid-template-areas: var(--area, "header header" "nav nav" "content content" "footer footer");
-  grid-template-columns: var(--columns, minmax(30ch, 1fr) 5fr);
+  grid-template-columns: var(--columns, 5fr minmax(30ch, 1fr));
   grid-template-rows: var(--rows, auto auto 1fr 6rem);
 }
 
